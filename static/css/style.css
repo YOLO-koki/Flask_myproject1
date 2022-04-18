@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(49, 113, 159);
+    color: aliceblue;
+}
+
+.contents{
+    display: flex;
+}
+
+.input_search{
+    width: 500px;
+}
+
+.add{
+    display: inline;
+    margin-right: 0;
+    background-color: orange;
+}
+
+.dict{
+    margin-top: 30px;
+    width: 50%;
+    margin-left: 30px;
+    height: 80vh;
+    overflow-y: scroll;
+    background-color: black;
+}
+
+.form{
+    display: flex;
+    display: block;
+}
+
+.meaning{
+    margin-left: 50px;
+}
+
+a{
+    color: aliceblue;
+}

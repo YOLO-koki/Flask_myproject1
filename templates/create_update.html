@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ page_title }}</h1>
+<ul>
+    <form action="/{{ page }}" method="post">
+        <label>タイトル</label>
+        <input type="text" name="title" value="{{ post.title }}">
+
+        <label>読み</label>
+        <input type="text" name="pseudonym" value="{{ post.pseudonym }}" placeholder="ひらがな">
+        
+        <label>意味</label>
+        <input type="text" name="meaning" value="{{ post.meaning }}">
+
+        <input type="submit" value="{{ work }}">
+    </form>
+    <p><a href="/">戻る</a></p>
+</ul>
+{% endblock %}

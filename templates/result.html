@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="form">
+    <form action="/result" method="post" class="search">
+        <input type="text" name="search" class="input_search">
+        <input type="submit" value="検索">
+    </form>
+    
+    <!--  -->
+    <!-- ここにカテゴリ名が入る -->
+    <!--  -->
+    
+    <form action="/create" method="get" class="add">
+        <input type="submit" value="新規登録">
+    </form>
+
+    <p><a href="/">戻る</a></p>
+</div>
+
+<div class="contents">
+        <div class="dict">
+            <div class="meanings">
+                {% for post in posts %}
+                <div class="meanings">
+                    <!-- ここにタイトル、意味、削除、編集等が入る -->
+                    <h2>{{ post.title }}</h2>
+    
+                    <form action="/{{post.id}}/update" method="get">
+                        <input type="submit" value="編集">
+                    </form>
+                    <form action="/{{post.id}}/delete" method="post">
+                        <input type="submit" value="削除">
+                    </form>
+                    <form action="/{{post.id}}/meaning" method="post">
+                        <input type="submit" value="意味">
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="meaning"> 
+            <h1>{{ title }}</h1>
+            <p>{{ meaning }}</p>
+            <p>{{ pseudonym }}</p>
+            <p>{{ created_at }}</p>
+        </div>
+    </div>
+{% endblock %}
