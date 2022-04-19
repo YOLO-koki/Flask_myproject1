@@ -26,13 +26,7 @@ def index():
         # データベースの全てのデータの取得
         posts = db.session.query(Post).order_by(Post.pseudonym).all()
         post = Post.query.get(1)
-        div1 = Markup('<div class="meaning">')
-        h1_1 = Markup('<h1>')
-        h1_2 = Markup('</h1>')
-        p1 = Markup('<p>')
-        p2 = Markup('</p>')
-        div2 = Markup('</div>')
-        return render_template('index.html', posts=posts, post=post, div1=div1, div2=div2, h1_1=h1_1, h1_2=h1_2, p1=p1, p2=p2)
+        return render_template('index.html', posts=posts, post=post)
 
 
 
